@@ -8,3 +8,6 @@ function initMap() {
         subdomains: ['a', 'b', 'c']
     }).addTo(map);
 }
+
+// Call the initMap function when the page loads
+document.addEventListener('DOMContentLoaded', initMap);
