@@ -1,8 +1,10 @@
 let map;
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 37.7749, lng: -122.4194 },
-        zoom: 13,
-    });
+    map = L.map('map').setView([37.7749, -122.4194], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+        subdomains: ['a', 'b', 'c']
+    }).addTo(map);
 }
