@@ -1,18 +1,8 @@
 let map;
 
 function initMap() {
-  map = new ol.Map({
-    target: 'map',
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.OSM()
-      })
-    ],
-    view: new ol.View({
-      center: ol.proj.fromLonLat([-122.4194, 37.7749]),
-      zoom: 12
-    })
-  });
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 37.7749, lng: -122.4194 },
+        zoom: 13,
+    });
 }
-
-initMap();
