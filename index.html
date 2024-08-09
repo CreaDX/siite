@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>World Map with Circles</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.4/jquery-jvectormap.min.css">
+  <title>Google Map with Custom Overlay and Clickable Circle Markers</title>
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>World Map with Circles</h1>
-    <div class="map-container">
-      <div id="map"></div>
-    </div>
-    <div class="button-container">
-      <button id="small-circle-btn">Small Circle</button>
-      <button id="medium-circle-btn">Medium Circle</button>
-      <button id="large-circle-btn">Large Circle</button>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.4/jquery-jvectormap.min.js"></script>
+  <div id="map"></div>
+  <button id="small-circle-btn">Small Circle</button>
+  <button id="medium-circle-btn">Medium Circle</button>
+  <button id="large-circle-btn">Large Circle</button>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
   <script src="script.js"></script>
 </body>
 </html>
