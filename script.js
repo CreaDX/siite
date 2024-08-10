@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Create a circle marker with meter-based rendering
 var circle = L.circle([40, -74], {
-  radius: 500000, // initial radius in meters
+  radius: 1000, // initial radius in meters
   color: 'red',
   fillColor: 'red',
   fillOpacity: 0.5,
@@ -22,10 +22,10 @@ map.on('click', function(e) {
   console.log(`Circle teleported to: ${e.latlng.lat}, ${e.latlng.lng}`);
 });
 
-// Adjust circle radius based on map zoom level
-map.on('zoomend', function() {
-  var zoomLevel = map.getZoom();
-  var radius = 1000; // adjust radius based on zoom level
-  circle.setRadius(radius);
-  console.log(`Circle radius adjusted to: ${radius}m`);
+// Update circle radius based on textbox value
+document.getElementById('update-radius-btn').addEventListener('click', function() {
+  var radiusInput = document.getElementById('radius-input');
+  var newRadius = parseInt(radiusInput.value, 10);
+  circle.setRadius(newRadius);
+  console.log(`Circle radius updated to: ${newRadius}m`);
 });
