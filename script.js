@@ -7,14 +7,15 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   subdomains: ['a', 'b', 'c']
 }).addTo(map);
 
-// Create a circle marker
+// Create a circle marker with pixel-based rendering
 var circle = L.circleMarker([40, -74], {
-  radius: 10, // fixed radius
+  radius: 10, // radius in pixels
   color: 'red',
   fillColor: 'red',
   fillOpacity: 0.5,
   opacity: 0.5, // make it semi-transparent (faded)
-  draggable: true // allow dragging
+  draggable: true, // allow dragging
+  renderer: L.canvas() // use pixel-based rendering
 }).addTo(map);
 
 // Update the circle's position on drag
