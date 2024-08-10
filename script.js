@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Create a circle marker with meter-based rendering
 var circle = L.circle([40, -74], {
-  radius: 1000, // initial radius in meters
+  radius: 500000, // initial radius in meters
   color: 'red',
   fillColor: 'red',
   fillOpacity: 0.5,
