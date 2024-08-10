@@ -9,15 +9,16 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Create a circle marker
 var circle = L.circleMarker([40, -74], {
-  radius: 10, // initial radius
+  radius: 10, // fixed radius
   color: 'red',
   fillColor: 'red',
-  fillOpacity: 0.5
+  fillOpacity: 0.5,
+  opacity: 0.5, // make it semi-transparent (faded)
+  draggable: true // allow dragging
 }).addTo(map);
 
-// Update the circle's radius on zoom
-map.on('zoomend', function() {
-  var zoomLevel = map.getZoom();
-  var radius = 10 * (1 / Math.pow(2, zoomLevel - 12)); // adjust radius based on zoom level
-  circle.setRadius(radius);
+// Update the circle's position on drag
+circle.on('drag', function() {
+  var latlng = circle.getLatLng();
+  console.log(`Circle moved to: ${latlng.lat}, ${latlng.lng}`);
 });
