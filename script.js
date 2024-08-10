@@ -9,17 +9,24 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Create a circle marker with pixel-based rendering
 var circle = L.circleMarker([40, -74], {
-  radius: 10, // radius in pixels
+  radius: 40, // initial radius in pixels
   color: 'red',
   fillColor: 'red',
   fillOpacity: 0.5,
   opacity: 0.5, // make it semi-transparent (faded)
-  draggable: true, // allow dragging
   renderer: L.canvas() // use pixel-based rendering
 }).addTo(map);
 
-// Update the circle's position on drag
-circle.on('drag', function() {
-  var latlng = circle.getLatLng();
-  console.log(`Circle moved to: ${latlng.lat}, ${latlng.lng}`);
+// Teleport the circle to the point where the mouse was clicked
+map.on('click', function(e) {
+  circle.setLatLng(e.latlng);
+  console.log(`Circle teleported to: ${e.latlng.lat}, ${e.latlng.lng}`);
+});
+
+// Adjust circle radius based on map zoom level
+map.on('zoomend', function() {
+  var zoomLevel = map.getZoom();
+  var radius = 40 * (1 / Math.pow(2, zoomLevel - 12)); // adjust radius based on zoom level
+  circle.setRadius(radius);
+  console.log(`Circle radius adjusted to: ${radius}px`);
 });
