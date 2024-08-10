@@ -21,3 +21,11 @@ map.on('click', function(e) {
   circle.setLatLng(e.latlng);
   console.log(`Circle teleported to: ${e.latlng.lat}, ${e.latlng.lng}`);
 });
+
+// Adjust circle radius based on map zoom level
+map.on('zoomend', function() {
+  var zoomLevel = map.getZoom();
+  var radius = 1000 * Math.pow(2, 12 - zoomLevel); // adjust radius based on zoom level
+  circle.setRadius(radius);
+  console.log(`Circle radius adjusted to: ${radius}m`);
+});
