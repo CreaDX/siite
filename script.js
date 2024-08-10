@@ -25,7 +25,7 @@ map.on('click', function(e) {
 // Adjust circle radius based on map zoom level
 map.on('zoomend', function() {
   var zoomLevel = map.getZoom();
-  var radius = 0 * Math.pow(2, 12 - zoomLevel); // adjust radius based on zoom level
+  var radius = 0 * Math.pow(2, 2 - zoomLevel); // adjust radius based on zoom level
   circle.setRadius(radius);
   console.log(`Circle radius adjusted to: ${radius}m`);
 });
