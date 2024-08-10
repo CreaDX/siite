@@ -16,6 +16,15 @@ var circle = L.circle([40, -74], {
   opacity: 0.5, // make it semi-transparent (faded)
 }).addTo(map);
 
+// Create a circle marker with meter-based rendering
+var circle = L.circle([40, -74], {
+  radius: 10, // initial radius in meters
+  color: 'black',
+  fillColor: 'black',
+  fillOpacity: 1,
+  opacity: 1, // make it semi-transparent (faded)
+}).addTo(map);
+
 // Teleport the circle to the point where the mouse was clicked
 map.on('click', function(e) {
   circle.setLatLng(e.latlng);
