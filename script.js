@@ -1,17 +1,17 @@
 // Create the map
 var map = L.map('map').setView([40, -74], 12);
 
-// Add a tile layer (e.g. OpenStreetMap)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+// Add a dark-themed tile layer (Carto Dark Matter)
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
   subdomains: ['a', 'b', 'c']
 }).addTo(map);
 
 // Create a circle marker with meter-based rendering
 var circle = L.circle([40, -74], {
   radius: 1, // initial radius in meters (will be multiplied by 1000)
-  color: 'red',
-  fillColor: 'red',
+  color: 'white', // change the circle color to white for better visibility
+  fillColor: 'white',
   fillOpacity: 0.5,
   opacity: 0.5, // make it semi-transparent (faded)
 }).addTo(map);
