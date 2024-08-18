@@ -37,4 +37,5 @@ document.addEventListener("DOMContentLoaded", function() {
     var videoElement = document.getElementById('reload-video');
     console.log('Video element:', videoElement);
     videoElement.classList.add('reload-video-show');
-    console.log('Added reload
+  };
+});
