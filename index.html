@@ -6,34 +6,31 @@
     <title>⛉</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <style>
-      /* Add CSS here if you want to keep it in the HTML file */
-    </style>
 </head>
 <body>
     <div class="container">
         <h1>Cannon ballistic calculator (by WontedMist50753)</h1>
         <label for="radius-input">Enter height above target:</label>
-        <input type="number" id="radius-input" value="536" />
+        <input type="number" id="radius-input" value="1" />
         <button id="update-radius-btn">Update Radius</button>
-        <div class="calculator-container">
-            <h2>Medium Calculator</h2>
-            <label for="num1-input">Number 1:</label>
-            <input type="number" id="num1-input" value="0" />
-            <label for="num2-input">Number 2:</label>
-            <input type="number" id="num2-input" value="0" />
-            <button id="add-btn">+</button>
-            <button id="subtract-btn">-</button>
-            <button id="multiply-btn">*</button>
-            <button id="divide-btn">/</button>
-            <p id="result">Result: 0</p>
-        </div>
+        <div id="map"></div>
         <video id="intro-video" width="100%" height="100%" autoplay muted>
           <source src="0818(1).mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
     </div>
-    <div id="map"></div>
+    <div class="calculator-container">
+        <h2>Medium Calculator</h2>
+        <label for="num1-input">Number 1:</label>
+        <input type="number" id="num1-input" value="0" />
+        <label for="num2-input">Number 2:</label>
+        <input type="number" id="num2-input" value="0" />
+        <button id="add-btn">+</button>
+        <button id="subtract-btn">-</button>
+        <button id="multiply-btn">*</button>
+        <button id="divide-btn">/</button>
+        <p id="result">Result: 0</p>
+    </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
