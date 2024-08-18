@@ -46,10 +46,11 @@ button[type="button"]:hover {
   background-color: #334f3b;
 }
 
-#reload-video {
-  display: none; /* hide the video by default */
-}
-
-.reload-video-show {
-  display: block; /* show the video when the page is reloaded */
+#intro-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* Ensure the video is on top of other elements */
 }
