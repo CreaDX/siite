@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Create the map
   var map = L.map('map').setView([40, -74], 12);
-  // Add a dark-themed tile layer (Carto Dark Matter)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: ['a', 'b', 'c']
+  // Add a watercolor-themed tile layer (Stamen Watercolor)
+  L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, &copy; <a href="https://stamen.com/">Stamen</a>',
+    subdomains: ['a', 'b', 'c'],
+    ext: 'jpg'
   }).addTo(map);
   // Create a circle marker with meter-based rendering
   var circle = L.circle([40, -74], {
