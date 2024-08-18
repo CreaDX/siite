@@ -77,4 +77,27 @@ document.addEventListener("DOMContentLoaded", function() {
       resultElement.textContent = `Error: Division by zero!`;
     }
   });
+  
+  // Add drawing functionality
+  const drawButton = document.getElementById('draw-btn');
+  let drawingEnabled = false;
+  let drawnItems = L.featureGroup().addTo(map);
+
+  drawButton.addEventListener('click', () => {
+    drawingEnabled = !drawingEnabled;
+    if (drawingEnabled) {
+      drawButton.classList.add('active');
+      map.on('mousedown', (e) => {
+        if (drawingEnabled) {
+          const latlng = e.latlng;
+          const marker = L.marker(latlng, {
+            draggable: true,
+          }).addTo(drawnItems);
+        }
+      });
+    } else {
+      drawButton.classList.remove('active');
+      map.off('mousedown');
+    }
+  });
 });
