@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Create a circle marker with meter-based rendering
   var circle = L.circle([40, -74], {
-    radius: 536 * 1000, // initial radius in meters (added 536 and multiplied by 1000)
+    radius: 536, // initial radius in meters (added 536 and multiplied by 1000)
     color: 'white', // change the circle color to white for better visibility
     fillColor: 'white',
     fillOpacity: 0.5,
