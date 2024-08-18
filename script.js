@@ -30,4 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
     circle.setRadius(newRadius);
     console.log(`Circle radius updated to: ${newRadius}m`);
   });
+window.onload = function() {
+  var gifElement = document.getElementById('reload-gif');
+  gifElement.classList.add('reload-gif-show');
+  setTimeout(function() {
+    gifElement.classList.remove('reload-gif-show');
+  }, 7000); // hide the GIF after 4 seconds
+};
 });
