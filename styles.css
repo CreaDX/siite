@@ -1,50 +1,95 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  background: #10112b;
+  color: #fff; 
+}
+.container {
+  width: 800px;
+  margin: 40px auto;
+  text-align: center;
 }
 #map {
-    width: 100%;
-    height: 100vh; /* adjust the height as needed */
-}
-#map-controls {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-}
-#map-controls button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-#map-controls button:hover {
-    background-color: #444;
-}
-.leaflet-control-fullscreen {
-    background-image: url('https://unpkg.com/leaflet-fullscreen@1.0.2/dist/fullscreen.png');
-    background-size: 26px 26px;
-    width: 26px;
-    height: 26px;
-    border: none;
-    padding: 0;
-}
-.leaflet-control-fullscreen:hover {
-    background-color: #444;
+  height: 500px;
+  width: 800px;
+  border: 1px solid black;
 }
 
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input[type="number"] {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+button[type="button"] {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button[type="button"]:hover {
+  background-color: #334f3b;
+}
 #intro-video {
-    position: fixed; /* make it fixed on top of everything */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 1001; /* make sure it's on top of everything */
-    display: block; /* show it initially */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* Ensure the video is on top of other elements */
 }
-
-#map {
-    display: none; /* hide the map initially */
+.calculator-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  background-color: #10112b;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+.calculator-container h2 {
+  margin-top: 0;
+}
+.calculator-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+.calculator-container input[type="number"] {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.calculator-container button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.calculator-container button:hover {
+  background-color: #334f3b;
+}
+.calculator-container #result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
 }
