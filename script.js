@@ -100,4 +100,12 @@ document.addEventListener("DOMContentLoaded", function() {
       map.off('mousedown');
     }
   });
+  
+  // Night mode toggle button
+  var nightModeBtn = document.createElement('button');
+  nightModeBtn.innerHTML = 'Night Mode';
+  nightModeBtn.onclick = function() {
+    map.getContainer().classList.toggle('night-mode');
+  };
+  document.body.appendChild(nightModeBtn);
 });
