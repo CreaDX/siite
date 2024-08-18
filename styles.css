@@ -2,19 +2,16 @@ body {
     margin: 0;
     padding: 0;
 }
-
 #map {
     width: 100%;
     height: 100vh; /* adjust the height as needed */
 }
-
 #map-controls {
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 1000;
 }
-
 #map-controls button {
     background-color: #333;
     color: #fff;
@@ -23,11 +20,9 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
-
 #map-controls button:hover {
     background-color: #444;
 }
-
 .leaflet-control-fullscreen {
     background-image: url('https://unpkg.com/leaflet-fullscreen@1.0.2/dist/fullscreen.png');
     background-size: 26px 26px;
@@ -36,7 +31,6 @@ body {
     border: none;
     padding: 0;
 }
-
 .leaflet-control-fullscreen:hover {
     background-color: #444;
 }
