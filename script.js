@@ -28,8 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var video = document.getElementById("intro-video");
     video.play();
     setTimeout(function() {
-        video.pause();
-        video.style.display = "none";
+        video.style.display = "none"; // hide it after 7 seconds
     }, 7000); // 7 seconds
 });
 
