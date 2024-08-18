@@ -108,4 +108,19 @@ document.addEventListener("DOMContentLoaded", function() {
     map.getContainer().classList.toggle('night-mode');
   };
   document.body.appendChild(nightModeBtn);
+  
+  // Add event listener to calculate button
+  document.getElementById('calculate-btn').addEventListener('click', function() {
+    const num1 = parseFloat(document.getElementById('num1-input').value);
+    const num2 = parseFloat(document.getElementById('num2-input').value);
+    const result = num1 + num2;
+    document.getElementById('result').textContent = `Result: ${result}`;
+  });
+  
+  // Add event listener to clear button
+  document.getElementById('clear-btn').addEventListener('click', function() {
+    document.getElementById('num1-input').value = '';
+    document.getElementById('num2-input').value = '';
+    document.getElementById('result').textContent = '';
+  });
 });
