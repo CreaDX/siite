@@ -75,51 +75,18 @@ button[type="button"]:hover {
   margin-bottom: 10px;
 }
 
-.calculator-container input[type="number"] {
-  width: 100px;
-  height: 30px;
-  font-size: 18px;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.calculator-container button {
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
-  padding: 10px;
-  margin-bottom: 20px;
-  background-color: #4CAF50;
+#night-mode-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #333;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.calculator-container button:hover {
-  background-color: #334f3b;
-}
-
-.calculator-container #result {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-/* Night mode styles */
-.leaflet-container.night-mode {
-  background-color: #333;
-}
-
-.leaflet-container.night-mode .leaflet-tile {
-  filter: grayscale(100%) contrast(1.2) brightness(0.8);
-}
-
-.leaflet-container.night-mode .leaflet-popup-content {
+#night-mode-btn:hover {
   background-color: #444;
-  color: #fff;
-}
-
-.leaflet-container.night-mode .leaflet-popup-content a {
-  color: #fff;
 }
