@@ -25,7 +25,7 @@ map.on('click', function(e) {
 // Update circle radius based on textbox value
 document.getElementById('update-radius-btn').addEventListener('click', function() {
   var radiusInput = document.getElementById('radius-input');
-  var newRadius = parseInt(radiusInput.value, 10) + 20; // multiply by 1000
+  var newRadius = parseInt(radiusInput.value, 10) + 20 * 1000; // multiply by 1000
   circle.setRadius(newRadius);
   console.log(`Circle radius updated to: ${newRadius}m`);
 });
