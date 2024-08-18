@@ -31,10 +31,17 @@ document.addEventListener("DOMContentLoaded", function() {
   var videoElement = document.getElementById('intro-video');
   videoElement.play();
 
-  // Hide video after 7 seconds
+  // Hide video after 7 seconds and make map full screen
   setTimeout(function() {
     videoElement.pause();
     videoElement.style.display = 'none';
+    document.getElementById('map').style.height = '100vh';
+    document.getElementById('map').style.width = '100vw';
+    document.getElementById('map').style.position = 'absolute';
+    document.getElementById('map').style.top = '0';
+    document.getElementById('map').style.left = '0';
+    document.getElementById('map').style.zIndex = '1000';
+    document.body.style.overflow = 'hidden';
   }, 7000);
 
   // Medium calculator functionality
@@ -96,46 +103,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Night mode toggle button
-  var nightModeBtn = document.createElement('button');
-  nightModeBtn.innerHTML = 'Night Mode';
-  nightModeBtn.onclick = function() {
-    map.getContainer().classList.toggle('night-mode');
-  };
-  document.body.appendChild(nightModeBtn);
 
-document.getElementById('divide-btn').addEventListener('click', function() {
-  const num1 = parseFloat(document.getElementById('num1-input').value);
-  const num2 = parseFloat(document.getElementById('num2-input').value);
-  if (num2 === 0) {
-    alert("Cannot divide by zero!");
-  } else {
-    const result = num1 / num2;
-  // Add event listener to calculate button
-  document.getElementById('calculate-btn').addEventListener('click', function() {
-    const num1 = parseFloat(document.getElementById('num1-input').value);
-    const num2 = parseFloat(document.getElementById('num2-input').value);
-    const result = num1 + num2;
-    document.getElementById('result').textContent = `Result: ${result}`;
-  }
-});
-
-document.getElementById('calculate-btn').addEventListener('click', function() {
-  const num1 = parseFloat(document.getElementById('num1-input').value);
-  const num2 = parseFloat(document.getElementById('num2-input').value);
-  const result = num1 + num2;
-  document.getElementById('result').textContent = `Result: ${result}`;
-});
-  });
-
-document.getElementById('clear-btn').addEventListener('click', function() {
-  document.getElementById('num1-input').value = '';
-  document.getElementById('num2-input').value = '';
-  document.getElementById('result').textContent = '';
-  // Add event listener to clear button
-  document.getElementById('clear-btn').addEventListener('click', function() {
-    document.getElementById('num1-input').value = '';
-    document.getElementById('num2-input').value = '';
-    document.getElementById('result').textContent = '';
+  var nightModeBtn = document.getElementById('night-mode-btn');
+  nightModeBtn.addEventListener('click', function() {
+    document.body.classList.toggle('night-mode');
+    if (document.body.classList.contains('night-mode')) {
+      nightModeBtn.textContent = 'Day Mode';
+    } else {
+      nightModeBtn.textContent = 'Night Mode';
+    }
   });
 });
