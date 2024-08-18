@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 
 // Create a circle marker with meter-based rendering
 var circle = L.circle([40, -74], {
-  radius: 1, // initial radius in meters (will be multiplied by 1000)
+  radius: 536, // initial radius in meters (will be multiplied by 1000)
   color: 'white', // change the circle color to white for better visibility
   fillColor: 'white',
   fillOpacity: 0.5,
@@ -25,7 +25,7 @@ map.on('click', function(e) {
 // Update circle radius based on textbox value
 document.getElementById('update-radius-btn').addEventListener('click', function() {
   var radiusInput = document.getElementById('radius-input');
-  var newRadius = parseInt(radiusInput.value, 10) * 1000; // multiply by 1000
+  var newRadius = parseInt(radiusInput.value, 10) + 20; // multiply by 1000
   circle.setRadius(newRadius);
   console.log(`Circle radius updated to: ${newRadius}m`);
 });
