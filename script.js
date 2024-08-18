@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
     attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
     subdomains: ['a', 'b', 'c']
   }).addTo(map);
+  
+  // Set map container height
+  document.getElementById('map').style.height = '100vh';
+
   // Create a circle marker with meter-based rendering
   var circle = L.circle([40, -74], {
     radius: 536, // initial radius in meters (added 536 and multiplied by 1000)
@@ -14,11 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
     fillOpacity: 0.5,
     opacity: 0.5, // make it semi-transparent (faded)
   }).addTo(map);
+  
   // Teleport the circle to the point where the mouse was clicked
   map.on('click', function(e) {
     circle.setLatLng(e.latlng);
     console.log(`Circle teleported to: ${e.latlng.lat}, ${e.latlng.lng}`);
   });
+  
   // Update circle radius based on textbox value
   document.getElementById('update-radius-btn').addEventListener('click', function() {
     var radiusInput = document.getElementById('radius-input');
@@ -32,17 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
   videoElement.play();
 
   // Hide video after 7 seconds and make map full screen
-  setTimeout(function() {
+  videoElement.addEventListener('ended', function() {
     videoElement.pause();
     videoElement.style.display = 'none';
-    document.getElementById('map').style.height = '100vh';
     document.getElementById('map').style.width = '100vw';
     document.getElementById('map').style.position = 'absolute';
     document.getElementById('map').style.top = '0';
     document.getElementById('map').style.left = '0';
     document.getElementById('map').style.zIndex = '1000';
     document.body.style.overflow = 'hidden';
-  }, 7000);
+  });
 
   // Medium calculator functionality
   const num1Input = document.getElementById('num1-input');
@@ -79,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       resultElement.textContent = `Error: Division by zero!`;
     }
- });
+  });
 
   // Add drawing functionality
   const drawButton = document.getElementById('draw-btn');
@@ -97,19 +102,15 @@ document.addEventListener("DOMContentLoaded", function() {
           }).addTo(drawnItems);
         }
       });
-    } else {
+    } else {      
       drawButton.classList.remove('active');
       map.off('mousedown');
     }
   });
 
-// Night mode toggle button
-var nightModeBtn = document.getElementById('night-mode-btn');
-nightModeBtn.addEventListener('click', function() {
-  document.body.classList.toggle('night-mode');
-  if (document.body.classList.contains('night-mode')) {
-    nightModeBtn.textContent = 'Day Mode';
-  } else {
-    nightModeBtn.textContent = 'Night Mode';
-  }
+  // Clear drawn items
+  const clearButton = document.getElementById('clear-btn');
+  clearButton.addEventListener('click', () => {
+    drawnItems.clearLayers();
+  });
 });
