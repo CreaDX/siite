@@ -21,3 +21,27 @@ L.easyButton('fa-chevron-down', function(btn, map){
 L.easyButton('fa-home', function(btn, map){
     map.setView([57.634, -339.621], 6);
 }).addTo(map);
+// ...
+
+// play intro video for 7 seconds after page reload
+document.addEventListener("DOMContentLoaded", function() {
+    var video = document.getElementById("intro-video");
+    video.play();
+    setTimeout(function() {
+        video.pause();
+        video.style.display = "none";
+    }, 7000); // 7 seconds
+});
+
+// make video full screen
+video.addEventListener("click", function() {
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+    }
+});
