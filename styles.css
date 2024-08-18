@@ -17,7 +17,6 @@ body {
   border: 1px solid black;
 }
 
-
 label {
   display: block;
   margin-bottom: 10px;
@@ -105,4 +104,22 @@ button[type="button"]:hover {
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
+}
+
+/* Night mode styles */
+.leaflet-container.night-mode {
+  background-color: #333;
+}
+
+.leaflet-container.night-mode .leaflet-tile {
+  filter: grayscale(100%) contrast(1.2) brightness(0.8);
+}
+
+.leaflet-container.night-mode .leaflet-popup-content {
+  background-color: #444;
+  color: #fff;
+}
+
+.leaflet-container.night-mode .leaflet-popup-content a {
+  color: #fff;
 }
