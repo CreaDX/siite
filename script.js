@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
     circle.setRadius(newRadius);
     console.log(`Circle radius updated to: ${newRadius}m`);
   });
-window.onload = function() {
-  var gifElement = document.getElementById('reload-gif');
-  gifElement.classList.add('reload-gif-show');
-  setTimeout(function() {
-    gifElement.classList.remove('reload-gif-show');
-  }, 7000); // hide the GIF after 4 seconds
-};
-});
+
+  // Show the GIF animation on page load
+  window.onload = function() {
+    console.log('Window loaded!');
+    var gifElement = document.getElementById('reload-gif');
+    console.log('GIF element:', gifElement);
+    gifElement.classList.add('reload-gif-show');
+    console.log('Added reload-gif-show class
