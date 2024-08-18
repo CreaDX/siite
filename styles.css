@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #10112b;
+  background: #334f3b;
 }
 
 .container {
@@ -45,6 +45,7 @@ button[type="button"] {
 button[type="button"]:hover {
   background-color: #334f3b;
 }
+
 #reload-gif {
   display: none; /* hide the GIF by default */
 }
