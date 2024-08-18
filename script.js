@@ -36,4 +36,45 @@ document.addEventListener("DOMContentLoaded", function() {
     videoElement.pause();
     videoElement.style.display = 'none';
   }, 7000);
+  
+  // Medium calculator functionality
+  const num1Input = document.getElementById('num1-input');
+  const num2Input = document.getElementById('num2-input');
+  const addBtn = document.getElementById('add-btn');
+  const subtractBtn = document.getElementById('subtract-btn');
+  const multiplyBtn = document.getElementById('multiply-btn');
+  const divideBtn = document.getElementById('divide-btn');
+  const resultElement = document.getElementById('result');
+
+  addBtn.addEventListener('click', () => {
+    const num1 = parseFloat(num1Input.value);
+    const num2 = parseFloat(num2Input.value);
+    const result = num1 + num2;
+    resultElement.textContent = `Result: ${result}`;
+  });
+
+  subtractBtn.addEventListener('click', () => {
+    const num1 = parseFloat(num1Input.value);
+    const num2 = parseFloat(num2Input.value);
+    const result = num1 - num2;
+    resultElement.textContent = `Result: ${result}`;
+  });
+
+  multiplyBtn.addEventListener('click', () => {
+    const num1 = parseFloat(num1Input.value);
+    const num2 = parseFloat(num2Input.value);
+    const result = num1 * num2;
+    resultElement.textContent = `Result: ${result}`;
+  });
+
+  divideBtn.addEventListener('click', () => {
+    const num1 = parseFloat(num1Input.value);
+    const num2 = parseFloat(num2Input.value);
+    if (num2 !== 0) {
+      const result = num1 / num2;
+      resultElement.textContent = `Result: ${result}`;
+    } else {
+      resultElement.textContent = `Error: Division by zero!`;
+    }
+  });
 });
