@@ -31,14 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(`Circle radius updated to: ${newRadius}m`);
   });
 
-window.onload = function() {
-  console.log('Window loaded!');
-  var videoElement = document.getElementById('reload-video');
-  console.log('Video element:', videoElement);
-  videoElement.classList.add('reload-video-show');
-  console.log('Added reload-video-show class');
-  setTimeout(function() {
-    videoElement.classList.remove('reload-video-show');
-    console.log('Removed reload-video-show class');
-  }, 7000); // hide the video after 4 seconds
-};
+  // Show the video animation on page load
+  window.onload = function() {
+    console.log('Window loaded!');
+    var videoElement = document.getElementById('reload-video');
+    console.log('Video element:', videoElement);
+    videoElement.classList.add('reload-video-show');
+    console.log('Added reload
