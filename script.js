@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Teleport the circle to the point where the mouse was clicked
   map.on('click', function(e) {
     circle.setLatLng(e.latlng);
-    console.log(`Circle teleported to: ${e.latlng.lat}, ${e.latlng.lng}`);
+    console.log('Circle teleported to: ' + e.latlng.lat + ', ' + e.latlng.lng);
   });
 
   // Update circle radius based on textbox value
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var radiusInput = document.getElementById('radius-input');
     var newRadius = (parseInt(radiusInput.value, 10) + 536) * 1000; // add 536 and then multiply by 1000
     circle.setRadius(newRadius);
-    console.log(`Circle radius updated to: ${newRadius}m`);
+    console.log('Circle radius updated to: ' + newRadius + 'm');
   });
 
   // Show the video animation on page load
