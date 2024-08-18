@@ -45,3 +45,10 @@ button[type="button"] {
 button[type="button"]:hover {
   background-color: #334f3b;
 }
+#reload-gif {
+  display: none; /* hide the GIF by default */
+}
+
+.reload-gif-show {
+  display: block; /* show the GIF when the page is reloaded */
+}
