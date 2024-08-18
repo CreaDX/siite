@@ -103,14 +103,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-
-  var nightModeBtn = document.getElementById('night-mode-btn');
-  nightModeBtn.addEventListener('click', function() {
-    document.body.classList.toggle('night-mode');
-    if (document.body.classList.contains('night-mode')) {
-      nightModeBtn.textContent = 'Day Mode';
-    } else {
-      nightModeBtn.textContent = 'Night Mode';
-    }
-  });
+// Night mode toggle button
+var nightModeBtn = document.getElementById('night-mode-btn');
+nightModeBtn.addEventListener('click', function() {
+  document.body.classList.toggle('night-mode');
+  if (document.body.classList.contains('night-mode')) {
+    nightModeBtn.textContent = 'Day Mode';
+  } else {
+    nightModeBtn.textContent = 'Night Mode';
+  }
 });
