@@ -111,6 +111,6 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('clear-btn').addEventListener('click', function() {
     document.getElementById('num1-input').value = '';
     document.getElementById('num2-input').value = '';
-    document.getElementById('result').textContent = '';
+    document.getElementById('result').textContent = 'Result: 0';
   });
 });
