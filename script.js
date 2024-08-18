@@ -31,11 +31,13 @@ document.addEventListener("DOMContentLoaded", function() {
   var videoElement = document.getElementById('intro-video');
   videoElement.play();
   
-  // Hide video after 7 seconds
-  setTimeout(function() {
-    videoElement.pause();
-    videoElement.style.display = 'none';
-  }, 7000);
+  // Wait for the video to start playing before setting the timeout
+  videoElement.addEventListener('playing', function() {
+    setTimeout(function() {
+      videoElement.pause();
+      videoElement.style.display = 'none';
+    }, 7000);
+  });
   
   // Medium calculator functionality
   const num1Input = document.getElementById('num1-input');
@@ -96,14 +98,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
   
-  // Night mode toggle button
-  var nightModeBtn = document.createElement('button');
-  nightModeBtn.innerHTML = 'Night Mode';
-  nightModeBtn.onclick = function() {
-    map.getContainer().classList.toggle('night-mode');
-  };
-  document.body.appendChild(nightModeBtn);
-
   // Add event listener to calculate button
   document.getElementById('calculate-btn').addEventListener('click', function() {
     const num1 = parseFloat(document.getElementById('num1-input').value);
