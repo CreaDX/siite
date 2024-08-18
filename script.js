@@ -6,10 +6,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   subdomains: ['a', 'b', 'c']
 }).addTo(map);
 
-// Change map color scheme to dark blue-ish
+// Apply custom map style
 map.setStyle({
   "version": 8,
-  "name": "Dark Blue",
+  "name": "Custom Dark Theme",
   "metadata": {},
   "sources": {},
   "layers": [
@@ -17,7 +17,42 @@ map.setStyle({
       "id": "background",
       "type": "background",
       "paint": {
-        "background-color": "rgba(20, 20, 40, 1)"
+        "background-color": "#282a2f" // --theme-bg
+      }
+    },
+    {
+      "id": "roads",
+      "type": "line",
+      "source": "openstreetmap",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#707682" // --theme-dark
+      }
+    },
+    {
+      "id": "buildings",
+      "type": "fill",
+      "source": "openstreetmap",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "#4e5159" // --theme-bg-hover
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "openstreetmap",
+      "layout": {
+        "visibility": "visible",
+        "text-field": "{name}",
+        "text-size": 12
+      },
+      "paint": {
+        "text-color": "#d4d4d5" // --theme-text
       }
     }
   ]
@@ -45,6 +80,7 @@ calculatorDiv.innerHTML = `
   <div id="result"></div>
 `;
 document.body.appendChild(calculatorDiv);
+
 
 // Add event listeners to calculator buttons
 document.getElementById('add-btn').addEventListener('click', function() {
