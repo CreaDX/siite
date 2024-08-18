@@ -67,7 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add a timeout as a fallback
   videoElement.addEventListener("play", function () {
+    console.log("Video started playing");
     setTimeout(function () {
+      console.log("Hiding video after 7 seconds");
       videoElement.style.display = "none";
       document.getElementById("map").style.width = "100vw";
       document.getElementById("map").style.position = "absolute";
