@@ -26,11 +26,14 @@ document.addEventListener("DOMContentLoaded", function() {
     circle.setRadius(newRadius);
     console.log(`Circle radius updated to: ${newRadius}m`);
   });
-window.onload = function() {
-  var gifElement = document.getElementById('reload-gif');
-  gifElement.classList.add('reload-gif-show');
+  
+  // Add video element
+  var videoElement = document.getElementById('intro-video');
+  videoElement.play();
+  
+  // Hide video after 7 seconds
   setTimeout(function() {
-    gifElement.classList.remove('reload-gif-show');
-  }, 7000); // hide the GIF after 4 seconds
-};
+    videoElement.pause();
+    videoElement.style.display = 'none';
+  }, 7000);
 });
