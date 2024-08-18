@@ -44,3 +44,7 @@ body {
     z-index: 1001; /* make sure it's on top of everything */
     display: block; /* show it initially */
 }
+
+#map {
+    display: none; /* hide the map initially */
+}
