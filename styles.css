@@ -55,3 +55,53 @@ button[type="button"]:hover {
   height: 100%;
   z-index: 1000; /* Ensure the video is on top of other elements */
 }
+
+.calculator-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.calculator-container h2 {
+  margin-top: 0;
+}
+
+.calculator-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.calculator-container input[type="number"] {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.calculator-container button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculator-container button:hover {
+  background-color: #334f3b;
+}
+
+.calculator-container #result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
