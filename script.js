@@ -23,12 +23,17 @@ L.easyButton('fa-home', function(btn, map){
 }).addTo(map);
 // ...
 
+// ...
+
 // play intro video for 7 seconds after page reload
 document.addEventListener("DOMContentLoaded", function() {
     var video = document.getElementById("intro-video");
     video.play();
+    video.requestFullscreen(); // make it full screen
+
     setTimeout(function() {
         video.style.display = "none"; // hide it after 7 seconds
+        document.exitFullscreen(); // exit full screen mode
     }, 7000); // 7 seconds
 });
 
