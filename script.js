@@ -65,18 +65,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.overflow = "hidden";
   });
 
-  // Add a timeout as a fallback
-  videoElement.addEventListener("play", function () {
-    console.log("Video started playing");
-    setTimeout(function () {
-      console.log("Hiding video after 7 seconds");
-      videoElement.style.display = "none";
-      document.getElementById("map").style.width = "100vw";
-      document.getElementById("map").style.position = "absolute";
-      document.getElementById("map").style.top = "0";
-      document.getElementById("map").style.left = "0";
-      document.getElementById("map").style.zIndex = "1000";
-      document.body.style.overflow = "hidden";
-    }, 7000); // hide video after 7 seconds
-  });
+  // Add a timeout to hide video after 7 seconds
+  setTimeout(function () {
+    console.log("Hiding video after 7 seconds");
+    videoElement.style.display = "none";
+    document.getElementById("map").style.width = "100vw";
+    document.getElementById("map").style.position = "absolute";
+    document.getElementById("map").style.top = "0";
+    document.getElementById("map").style.left = "0";
+    document.getElementById("map").style.zIndex = "1000";
+    document.body.style.overflow = "hidden";
+  }, 7000); // hide video after 7 seconds
 });
