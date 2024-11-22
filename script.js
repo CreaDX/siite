@@ -16,8 +16,7 @@ const tank = {
 
 // Bullet properties
 const bullet = {
-    width: 5,
-    height: 5,
+    radius: 5,
     speed: 10
 };
 
@@ -28,15 +27,17 @@ function drawMap() {
 
 // Function to draw the tank
 function drawTank() {
-    ctx.fillStyle = 'green';
+    ctx.fillStyle = 'green'; // Set tank color to green
     ctx.fillRect(tank.x, tank.y, tank.width, tank.height);
 }
 
 // Function to draw bullets
 function drawBullets() {
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = 'orange'; // Set bullet color to orange
     tank.bullets.forEach(b => {
-        ctx.fillRect(b.x, b.y, bullet.width, bullet.height);
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, bullet.radius, 0, Math.PI * 2); // Draw a circle for the bullet
+        ctx.fill();
     });
 }
 
@@ -69,7 +70,7 @@ function update() {
 
     // Shooting bullets
     if (keys[' ']) {
-        tank.bullets.push({ x: tank.x + tank.width / 2 - bullet.width / 2, y: tank.y });
+        tank.bullets.push({ x: tank.x + tank.width / 2, y: tank.y }); // Center the bullet on the tank
         keys[' '] = false; // Prevent multiple bullets
     }
 
