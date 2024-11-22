@@ -1,13 +1,15 @@
-body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #e0e0e0;
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+// Function to draw the map
+function drawMap() {
+    // Set a blank background
+    ctx.fillStyle = '#f0f0f0'; // Light grey background
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // You can add more elements to the map here
+    // For example, drawing obstacles or terrain features
 }
 
-canvas {
-    border: 1px solid #000;
-    background-color: #f0f0f0;
-}
+// Initial draw
+drawMap();
