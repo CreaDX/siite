@@ -1,0 +1,140 @@
+canvas {
+  border: 2px solid #000;
+  display: block;
+}
+canvas:focus {
+  outline: none;
+}
+.content {
+  margin: 20px auto 20px;
+  display: flex;
+  width: 860px;
+}
+body {
+	background-color: #060606;
+}
+.game {
+	width: 600px;
+  padding: 40px 40px;
+  margin: 0 20px 0 0;
+  height: 600px;
+  background-image:
+    -moz-linear-gradient(45deg, #00ba00 40%, transparent 40%), 
+    -moz-linear-gradient(-45deg, #00ba00 40%, transparent 40%),
+    -moz-linear-gradient(45deg, transparent 75%, #00ba00 75%),
+    -moz-linear-gradient(-45deg, transparent 75%, #00ba00 75%);
+  background-image:
+    -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.40, #00ba00), color-stop(.40, transparent)), 
+    -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.40, #00ba00), color-stop(.40, transparent)),
+    -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #00ba00)),
+    -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #00ba00));
+
+  -moz-background-size:2px 2px;
+  background-size:2px 2px;
+  -webkit-background-size:2px 2px; /* override value for shitty webkit */
+  background-position:center;
+}
+.game_title {
+  margin-bottom:20px;
+}
+.game_title img {
+  display:block;
+  margin: 0 auto;
+  width: 500px;
+  height: auto;
+}
+.score {
+  width: 160px;
+  color: white;
+  font-family: PixelEmulator;
+  font-size:30px;
+}
+.score__current {
+  margin-top: 50px;
+}
+.score__enemy_tanks {
+  margin-top: 50px;
+}
+.score__enemy_row {
+  width: 120px;
+  height: 26px;
+  display: flex;
+}
+.score__enemy_tank {
+  background: url('../../assets/images/blue_tank.png') center center;
+  background-size: contain;
+  width: 24px;
+  height: 28px;
+}
+.score__lives {
+  margin-top: 50px;
+}
+.score__lives_tank {
+  background: url('../../assets/images/green_tank.png') center center;
+  background-size: cover;
+  width: 40px;
+  height: 60px;
+}
+.score__lives_row {
+  display: flex;
+  width: 120px;
+  height: 80px;
+}
+.on_screen {
+  background: linear-gradient(       rgba(0, 0, 0, 0.45),        rgba(0, 0, 0, 0.45)     ), url(../../assets/images/blue_tank.png) 50%;
+  background-size: contain;
+}
+.control_panel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.control_button {
+  text-align: center;
+  color: #fff;
+  font-family: PixelEmulator;
+  font-size: 12px;
+  margin-right: 30px;
+}
+.mute {
+  background-color: #000000;
+}
+.mute_button {
+  text-align: center;
+  color: #fff;
+  font-family: PixelEmulator;
+  font-size: 12px;
+  margin-right: 30px;
+  display: block;
+  align-items: center;
+  text-align: center;
+  margin-right: 30px;
+}
+.mute_button:hover, .pause_button:hover, .exit_button:hover, .game_title__instructions:hover {
+  color:rgb(249,251,68);
+  cursor: pointer;
+}
+.pause_button {
+  text-align: center;
+  color: #fff;
+  font-family: PixelEmulator;
+  font-size: 12px;
+  margin-right: 30px;
+  width: 40px;
+}
+.exit_button {
+  text-align: center;
+  color: #fff;
+  font-family: PixelEmulator;
+  font-size: 12px;
+  margin-right: 30px;
+  width: 40px;
+}
+.game_title__instructions {
+  text-align: center;
+  color: #fff;
+  font-family: PixelEmulator;
+  font-size: 12px;
+  margin-right: 30px;
+  width: 120px;
+}

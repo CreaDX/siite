@@ -1,21 +1,47 @@
 {
-  "name": "p5-typescript-starter",
-  "version": "1.0.0",
-  "description": "Project to quickly get something working in [p5.js](https://p5js.org/) and [typescript](https://www.typescriptlang.org/)",
+  "name": "tank-battalion",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "run-p start-compile start-run",
-    "start-compile": "tsc --watch",
-    "start-run": "browser-sync start --server -w"
+    "start": "node app.js",
+    "start:watch": "node app.js",
+    "dev": "webpack  --devtool source-map --watch & gulp dev",
+    "devFullstack": "npm run dev & npm run start:watch",
+    "build": "gulp build & webpack"
   },
-  "homepage": "https://github.com/Gaweph/p5-typescript-starter#readme",
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "^4.17.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.2.1",
+    "jade": "^1.11.0",
+    "morgan": "^1.9.1",
+    "natives": "^1.1.6",
+    "serve-static": "^1.13.1",
+    "socket.io": "^2.0.3"
+  },
   "devDependencies": {
-    "@types/node": "^18.15.13",
-    "@types/p5": "^1.3.3",
-    "@types/sat": "^0.0.31",
-    "@types/socket.io-client": "^3.0.0",
-    "browser-sync": "^2.26.12",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^3.8.3"
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "babel-types": "^6.26.0",
+    "css-loader": "^3.5.3",
+    "file-loader": "^4.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "image-webpack-loader": "^5.0.0",
+    "resolve-url-loader": "^3.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.6"
   }
 }
