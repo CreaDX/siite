@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2D Tank Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tank Shooter by 11A IT</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
-    <script src="script.js"></script>
+    <div id="game-container">
+        <canvas id="game-canvas" width="800" height="600"></canvas>
+    </div>
+    <div id="score-container">
+        <h2>Player Score: <span id="player-score">0</span></h2>
+        <h2>AI Score: <span id="ai-score">0</span></h2>
+    </div>
+    <div id="high-score-container">
+        <h2>High Scores:</h2>
+        <ol id="high-score-list"></ol>
+    </div>
+    <script src="game.js"></script>
 </body>
 </html>
