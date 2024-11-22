@@ -1,13 +1,17 @@
-body {
-    margin: 0;
+#game-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #e0e0e0;
+    margin-bottom: 20px;
 }
 
-canvas {
-    border: 1px solid #000;
-    background-color: #f0f0f0;
+#score-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#high-score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
