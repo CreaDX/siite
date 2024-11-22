@@ -71,4 +71,23 @@ function update() {
     // Shooting bullets
     if (keys[' ']) {
         tank.bullets.push({ x: tank.x + tank.width / 2, y: tank.y }); // Center the bullet on the tank
-        keys[' '] = false; //
+        keys[' '] = false; // Prevent multiple bullets from being fired at once
+    }
+
+    updateBullets(); // Update bullet positions
+}
+
+// Main game loop
+function gameLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+    drawMap(); // Draw the background map
+    drawTank(); // Draw the tank
+    drawBullets(); // Draw the bullets
+    update(); // Update the game state
+    requestAnimationFrame(gameLoop); // Loop the game
+}
+
+// Draw the map once the image has loaded
+mapImage.onload = () => {
+    gameLoop(); // Start the game loop
+};
